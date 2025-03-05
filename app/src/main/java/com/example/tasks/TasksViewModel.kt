@@ -20,13 +20,13 @@ class TasksViewModel(private val dao: TaskDao) : ViewModel() {
     }
 
     private fun formatTasks(tasks: List<Task>): String {
-        return tasks.fold("") { str, task -> str + "/n" + formatTask(task) }
+        return tasks.fold("") { str, task -> str + "\n" + formatTask(task) }
     }
 
     private fun formatTask(task: Task): String {
         var str = "ID: ${task.taskId}"
-        str += '\n' + "Name: ${task.taskName}"
-        str += '\n' + "Complete: ${task.taskDone}" + '\n'
+        str += "\n" + "Name: ${task.taskName}"
+        str += "\n" + "Complete: ${task.taskDone}" + "\n"
         return str
     }
 }
