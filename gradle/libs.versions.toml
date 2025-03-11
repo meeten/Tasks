@@ -8,12 +8,14 @@ espressoCore = "3.6.1"
 appcompat = "1.7.0"
 lifecycleLivedataCoreKtx = "2.8.7"
 material = "1.12.0"
+recyclerview = "1.4.0"
 roomGradlePlugin = "2.6.1"
 viewmodel = "1.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-livedata-core-ktx = { module = "androidx.lifecycle:lifecycle-livedata-core-ktx", version.ref = "lifecycleLivedataCoreKtx" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomGradlePlugin" }
 androidx-room-gradle-plugin = { module = "androidx.room:room-gradle-plugin", version.ref = "roomGradlePlugin" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomGradlePlugin" }

@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.viewmodel)
+    implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.lifecycle.livedata.core.ktx)
     implementation(libs.material)
     implementation(libs.androidx.room.runtime)
