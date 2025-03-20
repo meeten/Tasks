@@ -43,6 +43,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.cardview)
     implementation(libs.androidx.room.gradle.plugin)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
