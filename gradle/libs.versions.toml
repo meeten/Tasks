@@ -9,6 +9,7 @@ espressoCore = "3.6.1"
 appcompat = "1.7.0"
 lifecycleLivedataCoreKtx = "2.8.7"
 material = "1.12.0"
+navigationSafeArgsGradlePlugin = "2.8.9"
 recyclerview = "1.4.0"
 roomGradlePlugin = "2.6.1"
 viewmodel = "1.1.1"
@@ -17,6 +18,7 @@ viewmodel = "1.1.1"
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-livedata-core-ktx = { module = "androidx.lifecycle:lifecycle-livedata-core-ktx", version.ref = "lifecycleLivedataCoreKtx" }
+androidx-navigation-safe-args-gradle-plugin = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigationSafeArgsGradlePlugin" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomGradlePlugin" }
 androidx-room-gradle-plugin = { module = "androidx.room:room-gradle-plugin", version.ref = "roomGradlePlugin" }
