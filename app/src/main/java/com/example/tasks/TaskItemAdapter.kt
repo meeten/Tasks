@@ -5,13 +5,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tasks.databinding.TaskItemBinding
+import com.example.tasks.generated.callback.OnClickListener
 
-class TaskItemAdapter :
+class TaskItemAdapter(private val clickListener: (taskId: Long) -> Unit) :
     ListAdapter<Task, TaskItemAdapter.TaskItemViewHolder>(TaskDiffItemCallback()) {
     class TaskItemViewHolder(private val binding: TaskItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Task) {
+        fun bind(item: Task, clickListener: (taskId: Long) -> Unit) {
             binding.task = item
+            binding.root.setOnClickListener { clickListener(item.taskId) }
         }
     }
 
@@ -22,6 +24,6 @@ class TaskItemAdapter :
     }
 
     override fun onBindViewHolder(holder: TaskItemViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), clickListener)
     }
 }
