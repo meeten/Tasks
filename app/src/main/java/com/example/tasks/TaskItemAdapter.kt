@@ -1,21 +1,15 @@
 package com.example.tasks
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class TaskItemAdapter : RecyclerView.Adapter<TaskItemAdapter.TaskItemViewHolder>() {
-    var data = listOf<Task>()
-        @SuppressLint("NotifyDataSetChanged")
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
+class TaskItemAdapter :
+    ListAdapter<Task, TaskItemAdapter.TaskItemViewHolder>(TaskDiffItemCallback()) {
     class TaskItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         fun bind(item: Task) {
             val taskName = view.findViewById<TextView>(R.id.task_name)
@@ -31,10 +25,7 @@ class TaskItemAdapter : RecyclerView.Adapter<TaskItemAdapter.TaskItemViewHolder>
         return TaskItemViewHolder(view)
     }
 
-    override fun getItemCount(): Int = data.size
-
     override fun onBindViewHolder(holder: TaskItemViewHolder, position: Int) {
-        val item = data[position]
-        holder.bind(item)
+        holder.bind(getItem(position))
     }
 }

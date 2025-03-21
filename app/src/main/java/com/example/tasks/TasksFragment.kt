@@ -31,7 +31,7 @@ class TasksFragment : Fragment() {
         binding.rcView.adapter = adapter
 
         tasksViewModel.tasks.observe(viewLifecycleOwner) {
-            it?.let { adapter.data = it }
+            it?.let { adapter.submitList(it) }
         }
 
         return binding.root
