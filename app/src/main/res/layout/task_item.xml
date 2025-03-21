@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/name_task"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="4dp"
-    app:cardElevation="8dp">
 
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <data>
+
+        <variable
+            name="task"
+            type="com.example.tasks.Task" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/name_task"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="8dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="8dp">
 
-        <TextView
-            android:id="@+id/task_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp" />
 
-        <CheckBox
-            android:id="@+id/task_done"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="false"
-            android:text="@string/done"
-            android:textSize="16sp" />
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/task_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="@{task.taskName}"/>
+
+            <CheckBox
+                android:id="@+id/task_done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="@string/done"
+                android:textSize="16sp"
+                android:checked="@{task.taskDone}"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

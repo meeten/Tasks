@@ -1,28 +1,24 @@
 package com.example.tasks
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tasks.databinding.TaskItemBinding
 
 class TaskItemAdapter :
     ListAdapter<Task, TaskItemAdapter.TaskItemViewHolder>(TaskDiffItemCallback()) {
-    class TaskItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class TaskItemViewHolder(private val binding: TaskItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Task) {
-            val taskName = view.findViewById<TextView>(R.id.task_name)
-            val taskDone = view.findViewById<CheckBox>(R.id.task_done)
-
-            taskName.text = item.taskName
-            taskDone.isClickable = item.taskDone
+            binding.task = item
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.task_item, parent, false)
-        return TaskItemViewHolder(view)
+        val binding = TaskItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        return TaskItemViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: TaskItemViewHolder, position: Int) {
