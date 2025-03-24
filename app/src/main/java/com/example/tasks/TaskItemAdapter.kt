@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tasks.databinding.TaskItemBinding
-import com.example.tasks.generated.callback.OnClickListener
 
 class TaskItemAdapter(private val clickListener: (taskId: Long) -> Unit) :
     ListAdapter<Task, TaskItemAdapter.TaskItemViewHolder>(TaskDiffItemCallback()) {
